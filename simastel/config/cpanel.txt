@@ -1,0 +1,25 @@
+Jangan lupa konfirmasi
+
+Segera lakukan konfirmasi setelah Anda melakukan pembayaran. Konfirmasi dapat dilakukan melalui salah satu metode di bawah ini :
+Halaman Konfirmasi
+Klik disini untuk melakukan konfirmasi melalui Halaman Konfirmasi
+ 
+SMS
+Kirimkan SMS ke nomor 081228899970 dengan format berikut :
+BAYAR<spasi>INV<spasi>#241227<spasi>720000<spasi>BCA<spasi>[NAMA PENGIRIM]
+*Mohon konfirmasi SMS dilakukan di hari yang sama
+Pembayaran yang tidak dikonfirmasikan tidak akan diproses!
+
+PFF-1191
+
+
+yosvara_simastel@hotmail.com
+cvgsstel2355
+
+cpanel
+simr4974
+h4ck312s112233
+
+
+check email
+http://iix26-1.rumahweb.com:2095/

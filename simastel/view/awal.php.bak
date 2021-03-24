@@ -1,0 +1,23 @@
+<div style='margin-top:-10.5px'>
+<h2>Populer Post</h2>
+
+</div>
+					 <?php 
+							$up=mysql_query("select * from artikel where jenis_artikel='artikel' order by artikel_dilihat desc limit 0,4 ");
+							echo mysql_error();
+							$no=3;
+							while($up1=mysql_fetch_object($up))
+							{
+								?>
+								<div class="s-12 m-12 l-12 " style='margin:0px'>
+								  <div class="box" style='background:<?=$warna[$no--]?>;margin-bottom:5px' >
+									<div style="background:#ff010"><h4 ><a href='<?=$url?>?post=<?=$up1->id_artikel?>' style='color:white;'><?=$up1->judul_artikel?></a> </h4></div>
+									 <p style='color:white'>
+									 <img style='float:left;padding-right:7px;padding-bottom:0px; height:100px;'src="<?=$url?>images/.thumbs/images/<?=$up1->gambar_artikel?>"/>
+									 <?=substr(strip_tags($up1->isi_artikel,'<a>'),0,250)?> ... <a href='<?=$url?>?post=<?=$up1->id_artikel?>'>Selegkapnya</a>
+									 </p>
+								  </div>
+								 </div>
+								<?php
+							}			
+							?>

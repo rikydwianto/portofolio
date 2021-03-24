@@ -1,0 +1,81 @@
+RewriteEngine on
+RewriteRule ^$ index.php [NC,L]
+RewriteRule ^home index.php [NC,L]
+RewriteRule ^riwayat index.php?menu=riwayat [NC,L]
+RewriteRule ^listbuku index.php?menu=list-buku [NC,L]
+RewriteRule ^blog$ index.php?menu=blog [NC,L]
+RewriteRule ^kontak index.php?menu=kontak [NC,L]
+RewriteRule ^about index.php?menu=about [NC,L]
+RewriteRule ^profile index.php?menu=profile [NC,L]
+RewriteRule ^login login.php [NC,L]
+RewriteRule ^logout logout.php [NC,L]
+
+
+RewriteRule ^penerbit$ index.php?menu=penerbit [NC,L]
+RewriteRule ^tambah/penerbit$ index.php?menu=penerbit&act=tambah [NC,L]
+RewriteRule ^edit/penerbit/([0-9a-zA-Z_-]+)$ index.php?menu=penerbit&act=edit&penerbit_kode=$1 [NC,L]
+RewriteRule ^hapus/penerbit/([0-9a-zA-Z_-]+)$ index.php?menu=penerbit&act=hapus&penerbit_kode=$1 [NC,L]
+
+RewriteRule ^petugas$ index.php?menu=petugas [NC,L]
+RewriteRule ^tambah/petugas$ index.php?menu=petugas&act=tambah [NC,L]
+RewriteRule ^edit/petugas/([0-9a-zA-Z_-]+)$ index.php?menu=petugas&act=edit&kode=$1 [NC,L]
+RewriteRule ^hapus/petugas/([0-9a-zA-Z_-]+)$ index.php?menu=petugas&act=hapus&kode=$1 [NC,L]
+
+
+RewriteRule ^buku$ index.php?menu=buku [NC,L]
+RewriteRule ^buku-(.*)$ index.php?menu=buku&page=$1 [NC,L]
+RewriteRule ^hapus/buku/([0-9a-zA-Z_-]+)$ index.php?menu=buku&act=hapus&buku_kode=$1 [NC,L]
+RewriteRule ^tambah/buku$ index.php?menu=buku&act=tambah [NC,L]
+RewriteRule ^edit/buku/([0-9a-zA-Z_-]+)$ index.php?menu=buku&act=edit&buku_kode=$1 [NC,L]
+
+
+RewriteRule ^artikel$ index.php?menu=artikel [NC,L]
+RewriteRule ^hapus/artikel/(.*)$ index.php?menu=artikel&act=hapus&artikel=$1 [NC,L]
+RewriteRule ^tambah/artikel$ index.php?menu=artikel&act=tambah [NC,L]
+RewriteRule ^edit/artikel/([0-9a-zA-Z_-]+)$ index.php?menu=artikel&act=edit&artikel=$1 [NC,L]
+RewriteRule ^lihat/artikel$ index.php?menu=artikel&act=lihat [NC,L]
+
+
+RewriteRule ^peminjam$ index.php?menu=peminjam [NC,L]
+RewriteRule ^tambah/peminjam$ index.php?menu=peminjam&act=tambah [NC,L]
+RewriteRule ^edit/peminjam/([0-9a-zA-Z_-]+)$ index.php?menu=peminjam&act=edit&peminjam_kode=$1 [NC,L]
+RewriteRule ^hapus/peminjam/([0-9a-zA-Z_-]+)$ index.php?menu=peminjam&act=hapus&peminjam_kode=$1 [NC,L]
+
+
+RewriteRule ^kategori$ index.php?menu=kategori [NC,L]
+RewriteRule ^tambah/kategori$ index.php?menu=kategori&act=tambah [NC,L]
+RewriteRule ^edit/kategori/([0-9a-zA-Z_-]+)$ index.php?menu=kategori&act=edit&kategori=$1 [NC,L]
+RewriteRule ^hapus/kategori/([0-9a-zA-Z_-]+)$ index.php?menu=kategori&act=hapus&kategori=$1 [NC,L]
+
+
+RewriteRule ^peminjam$ index.php?menu=peminjam [NC,L]
+RewriteRule ^tambah/peminjam$ index.php?menu=peminjam&act=tambah [NC,L]
+RewriteRule ^edit/peminjam/([0-9a-zA-Z_-]+)$ index.php?menu=peminjam&act=edit&peminjam_kode=$1 [NC,L]
+RewriteRule ^hapus/peminjam/([0-9a-zA-Z_-]+)$ index.php?menu=peminjam&act=hapus&peminjam_kode=$1 [NC,L]
+
+
+RewriteRule ^artikel/baca/([0-9a-zA-Z_-]+) index.php?menu=artikel&act=baca&id=$1 [NC,L]
+RewriteRule ^buku/baca/([0-9a-zA-Z_-]+) index.php?menu=buku&act=baca&id=$1 [NC,L]
+
+RewriteRule ^laporan$ index.php?menu=laporan [NC,L]
+RewriteRule ^laporan/peminjaman$ laporan.php?menu=peminjaman [NC,L]
+RewriteRule ^laporan/buku$ laporan.php?menu=buku [NC,L]
+RewriteRule ^laporan/kembalian$ laporan.php?menu=kembalian [NC,L]
+RewriteRule ^laporan/priodik$ index.php?menu=laporan&act=priodik [NC,L]
+RewriteRule ^laporan-priodik$ laporan.php?menu=priodik [NC,L]
+
+
+RewriteRule ^listbuku-(.*)$ index.php?menu=list-buku&page=$1 [L]
+RewriteRule ^list-buku-(.*)$ index.php?menu=list-buku&page=$1 [L]
+RewriteRule ^blog-(.*)$ index.php?menu=blog&page=$1 [L]
+RewriteRule ^list-buku$ index.php?menu=list-buku [L]
+
+
+
+RewriteRule ^kembali$ index.php?menu=pinjam&act=kembali [NC,L]
+RewriteRule ^pinjam$ index.php?menu=pinjam&act=pinjam [NC,L]
+RewriteRule ^kembalian-(.*)_(.*)_(.*).html$ kembalian.php?denda=$1&buku_kode=$2&pinjam_kode=$3 [NC,L]
+
+
+#<h1 align='center'>HALAMAN TIDAK TERSEDIA !!</h1><hr/> <h2><b>Error 404  : Page Not Found :''</b></h2>
+ErrorDocument 404  "<title>Tidak ditemukan - Error 404</title><body ><div style='width:80%;margin:auto;'><img src='http://localhost/riky_ab/images/error/404.png'style='margin: auto; width: 100%;' background=red></div></body>"

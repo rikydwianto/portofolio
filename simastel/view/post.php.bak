@@ -1,0 +1,27 @@
+<h2>Post</h2>
+<?php
+$post=$_GET['post'];
+@mysql_query("update artikel set artikel_dilihat=artikel_dilihat+1 where id_artikel='$post'");
+$r=mysql_query("select * from artikel where id_artikel='$post'");
+if(mysql_num_rows($r)==0)
+{	alert("halaman yg agan cari tidak ada !");
+	pindah("$url");
+}
+$r=mysql_fetch_object($r);
+ ?>
+<a href="<?=$url?>">Home</a> / <a href='<?=$url?>?k=<?=$r->jenis_artikel?>'><?=$r->jenis_artikel?> </a> / <?=$r->judul_artikel?> <hr/>
+<h3><?=$r->judul_artikel?></h3>
+oleh <strong><?=$r->username?></strong> pada <?=$r->waktu_artikel?> dilihat <strong><?=$r->artikel_dilihat?>X</strong>
+<p>
+	<?php 
+	
+		echo $r->deskripsi_singkat;
+		$asal='src="../library/editor/tinymcpuk/gambar/';
+		$ganti='src="library/editor/tinymcpuk/gambar/';
+	$repla=mysql_fetch_object(mysql_query("select replace('$r->isi_artikel','$asal','$ganti') as rep"));
+		echo $repla->rep;
+		
+	
+	?>
+</p>
+<?php include "view/komentar.php"; ?>
